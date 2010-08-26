@@ -1,0 +1,33 @@
+#wrapper {
+	height: 705px;
+}
+#infoGraph {
+	display: none;
+}
+
+#map {
+	height: 350px;
+	margin-top: 30px ;
+}
+body #wrapper #note.notification {
+	background-color: #4A3137;
+}
+
+p.info span.do, #footer {
+	background-color: #2C3947;}
+p.info span.doItNow {
+	background-color: #3E4146;}
+	
+#footer {
+	background-color:  transparent;
+}
+
+#footer a {
+	background-color: #2C3947;
+	color: whitesmoke;
+}
+
+#footer a:hover {
+	color: #2C3947;
+	background-color: whitesmoke;
+}

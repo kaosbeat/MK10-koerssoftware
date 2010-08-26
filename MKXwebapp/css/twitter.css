@@ -1,0 +1,296 @@
+#twtr-widget-1.twtr-widget {
+	position: relative;
+	font-size: 11px!important;
+	zoom: 1;
+	font-family: "lucida grande",lucida,tahoma,helvetica,arial,sans-serif!important;
+	color: black;
+	background-color: rgba(39,	46,	56, .6)
+;
+}
+
+.twtr-widget .twtr-spinner {
+	width: 14px;
+	height: 14px;
+	position: absolute;
+	background: url(http://widgets.twimg.com/j/1/spinner.gif) no-repeat;
+	top: 3px;
+	right: 3px;
+}
+
+.twtr-inactive {
+	display: none;
+}
+
+#twtr-widget-1.twtr-widget a img {
+	border: 0!important;
+	padding: 3px;
+}
+
+.twtr-doc {
+	overflow: hidden;
+	width: 100%;
+	text-align: left;
+	font-weight: normal;
+	-moz-border-radius: 100px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+}
+
+.twtr-bd {
+	padding: 0 1px;
+}
+
+#twtr-widget-1 .twtr-tweet-wrap {
+	padding: 6px 8px;
+	overflow: hidden;
+	zoom: 1;
+	background-color: transparent;
+}
+
+.twtr-fullscreen .twtr-tweet-wrap {
+	padding: 20px;
+}
+
+#twtr-widget-1 .twtr-tweet {
+	overflow: hidden;
+	border:none!important;
+	zoom: 1;
+	background-color: transparent!important;
+}
+
+.twtr-widget .twtr-tweet a.twtr-reply {
+	visibility: hidden;
+}
+
+* html .twtr-widget .twtr-tweet a.twtr-reply {
+	visibility: visible;
+}
+
+.twtr-widget .twtr-tweet:hover a.twtr-reply {
+	visibility: visible;
+}
+
+.twtr-widget-profile img.twtr-profile-img {
+	display: block;
+	float: left;
+	width: 31px;
+	height: 31px;
+	border: 0!important;
+}
+
+.twtr-widget h3,.twtr-widget h4, #twtr-widget-1 .twtr-widget p {
+	margin: 0!important;
+	padding: 0!important;
+	line-height: 1.2!important;
+	width: auto!important;
+}
+
+#twtr-widget-1.twtr-widget p{
+	background-color: #BCD1E2;
+	background-color: rgba(187, 209, 225,0.2);
+	z-index:0;
+}
+
+.twtr-widget-profile h3,.twtr-widget-profile h4 {
+	margin: 0 0 0 40px!important;
+}
+
+ h3 {
+	font-size: 16px!important;
+	font-weight: normal!important;
+	background: transparent url(images/lijnArrowRechts.png) no-repeat right top!important;
+	padding-right: 10px!important;
+	display: inline;
+}
+#twtr-widget-1.twtr-widget h3 {
+	display: none;
+	height: 0;
+}
+
+/* My Comment */
+
+.twtr-widget h4 {
+	font-size: 16px!important;
+}
+
+.twtr-widget i,.twtr-widget .twtr-new-results {
+	font-size: 9px;
+	font-style: normal;
+	display: block;
+	margin-top: 2px;
+	zoom: 1;
+}
+
+.twtr-widget .twtr-new-results {
+	text-align: center;
+	padding: 3px;
+	margin: 0 auto -10px auto;
+	display: block;
+	position: relative;
+	bottom: 5px;
+}
+
+.twtr-results-inner {
+	line-height: 1;
+	font-size: 100%;
+	padding: 4px 0;
+	position: relative;
+	bottom: -2px;
+	width: 40%;
+	margin: 0 auto;
+	z-index: 2;
+	text-align: center;
+}
+
+.twtr-results-hr {
+	width: 100%;
+	position: relative;
+	z-index: 1;
+	height: 1px;
+	border-bottom: 1px dotted #ddd;
+	bottom: 7px;
+	background: none;
+	overflow: hidden;
+}
+
+.twtr-new-results span {
+	position: relative;
+	z-index: 3;
+	top: -14px;
+	display: block;
+	font-size: 9px!important;
+}
+
+.twtr-fullscreen .twtr-new-results span {
+	font-size: 24px!important;
+}
+
+.twtr-hd {
+	padding: 10px;
+	position: relative;
+	zoom: 1;
+	overflow: hidden;
+}
+
+.twtr-fullscreen .twtr-hd {
+	height: 0;
+	padding: 0;
+}
+
+.twtr-timeline {
+	-moz-border-radius: 6px;
+	-webkit-border-radius: 6px;
+	border-radius: 6px;
+	position: relative;
+	overflow: hidden;
+	z-index: 2;
+	height: 225px;
+	background-color: red!Important;
+}
+
+.twtr-scroll .twtr-timeline {
+	overflow-x: hidden;
+	overflow-y: auto;
+}
+
+.twtr-widget .twtr-tweet:last-child {
+	border-bottom-width: 0;
+}
+
+.twtr-ft {
+	position: relative;
+}
+
+.twtr-ft div {
+	overflow: hidden;
+	padding: 10px;
+	zoom: 1;
+	display: none;
+}
+
+.twtr-ft span {
+	float: right;
+	text-align: right;
+}
+
+.twtr-ft a {
+	float: left;
+	display: block;
+}
+
+.twtr-ft span a {
+	float: none;
+}
+
+#twtr-widget-1.twtr-widget .twtr-avatar {
+	width: 40px;
+	height: 36px;
+	float: left;
+	overflow: hidden;
+	display: block;
+	background-color: rgba(187, 209, 225,0.3);
+}
+
+.twtr-fullscreen .twtr-avatar {
+	width: 80px;
+	height: 80px;
+}
+
+.twtr-img {
+	height: 25px;
+	width: 25px;
+}
+
+ .twtr-img img {
+	width: 30px;
+	height: 30px;
+}
+
+.twtr-fullscreen .twtr-img img {
+	width: 72px;
+	height: 72px;
+}
+
+.twtr-fullscreen a.twtr-join-conv {
+	display: none;
+}
+
+.twtr-tweet-text {
+	margin-left: 40px;
+}
+
+.twtr-fullscreen .twtr-tweet-text {
+	margin-left: 90px;
+}
+
+#twtr-widget-1 .twtr-doc a {
+	text-decoration: none!important;
+}
+
+#twtr-widget-1.twtr-widget a {
+	text-decoration: none;
+	border-bottom: 01px dotted #666;
+	background-color: rgba(237,	237, 237,0.1);
+	color: rgb(255,255,255);
+	color: rgba(255,255,255, 0.8);
+}
+
+#twtr-widget-1.twtr-widget a:hover {
+	background-color: rgba(108,45,53,0.4);
+	color: black;
+	color: rgba(0,0,0, 0.8);
+}
+
+#twtr-widget-1.twtr-widget a.twtr-user {
+	display: block;
+	background-color: rgba(187, 209, 225,0.1);
+	padding:3px 0px;
+}
+
+#twtr-widget-1.twtr-widget a.twtr-timestamp {
+	color: #aaa!important;
+}
+
+.twtr-doc a:hover {
+	color: black;
+}

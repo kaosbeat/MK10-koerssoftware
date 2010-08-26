@@ -1,0 +1,31 @@
+application: sporzakoers
+version: 1
+runtime: python
+api_version: 1
+
+
+handlers:
+
+- url: /remote_api
+  script: $PYTHON_LIB/google/appengine/ext/remote_api/handler.py
+  login: admin
+
+- url: /js
+  static_dir: js
+
+- url: /css
+  static_dir: css
+
+- url: /img
+  static_dir: img
+  
+- url: /favicon.ico
+  static_files: img/favicon.ico
+  upload: img/favicon.ico
+
+- url: /data.csv
+  static_files: js/data.csv
+  upload: js/data.csv
+
+- url: .*
+  script: main.py
