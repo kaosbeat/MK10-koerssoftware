@@ -1,0 +1,17 @@
+eerste stap proberen alle software samen te brengen!
+
+let's see:
+
+GPStracker-backend
+	- needs multiusersupport
+	- json format moet verbeterd worden (multiusersupport)
+
+GPStracker-frontend
+	- bestaande code voor maps
+	- nieuwe code voor markers (filters?)
+
+De code voor djingle box is brand new
+	- eerste stap nadenken over opties. Moet snel te bedienen zijn.
+	- moet read/write gekoppeld zijn aan de database/spreadsheet
+	:
+
