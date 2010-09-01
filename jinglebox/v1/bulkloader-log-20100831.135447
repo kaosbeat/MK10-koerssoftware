@@ -1,0 +1,98 @@
+[INFO     2010-08-31 13:54:47,623 bulkloader.py] Logging to bulkloader-log-20100831.135447
+[INFO     2010-08-31 13:54:47,623 bulkloader.py] Throttling transfers:
+[INFO     2010-08-31 13:54:47,623 bulkloader.py] Bandwidth: 250000 bytes/second
+[INFO     2010-08-31 13:54:47,624 bulkloader.py] HTTP connections: 8/second
+[INFO     2010-08-31 13:54:47,624 bulkloader.py] Entities inserted/fetched/modified: 20/second
+[INFO     2010-08-31 13:54:47,624 bulkloader.py] Batch Size: 10
+[INFO     2010-08-31 13:54:47,625 bulkloader.py] Opening database: bulkloader-progress-20100831.135447.sql3
+[DEBUG    2010-08-31 13:54:47,645 adaptive_thread_pool.py] [Thread-1] WorkerThread: started
+[DEBUG    2010-08-31 13:54:47,656 adaptive_thread_pool.py] [Thread-2] WorkerThread: started
+[DEBUG    2010-08-31 13:54:47,667 adaptive_thread_pool.py] [Thread-3] WorkerThread: started
+[DEBUG    2010-08-31 13:54:47,677 adaptive_thread_pool.py] [Thread-4] WorkerThread: started
+[DEBUG    2010-08-31 13:54:47,687 adaptive_thread_pool.py] [Thread-5] WorkerThread: started
+[DEBUG    2010-08-31 13:54:47,699 adaptive_thread_pool.py] [Thread-6] WorkerThread: started
+[DEBUG    2010-08-31 13:54:47,709 adaptive_thread_pool.py] [Thread-7] WorkerThread: started
+[DEBUG    2010-08-31 13:54:47,720 adaptive_thread_pool.py] [Thread-8] WorkerThread: started
+[DEBUG    2010-08-31 13:54:47,730 adaptive_thread_pool.py] [Thread-9] WorkerThread: started
+[DEBUG    2010-08-31 13:54:47,741 adaptive_thread_pool.py] [Thread-10] WorkerThread: started
+[DEBUG    2010-08-31 13:54:47,751 bulkloader.py] Configuring remote_api. url_path = /remote_api, servername = mk10koers.appspot.com
+[DEBUG    2010-08-31 13:54:47,888 bulkloader.py] Bulkloader using app_id: mk10koers
+[INFO     2010-08-31 13:54:47,889 bulkloader.py] Connecting to mk10koers.appspot.com/remote_api
+[DEBUG    2010-08-31 13:54:48,235 bulkloader.py] [Thread-11] ProgressTrackerThread: started
+[DEBUG    2010-08-31 13:54:48,245 bulkloader.py] [Thread-12] DataSourceThread: started
+[INFO     2010-08-31 13:54:48,245 bulkloader.py] Skipping header line.
+[INFO     2010-08-31 13:54:48,246 bulkloader.py] Starting import; maximum 10 entities per post
+[DEBUG    2010-08-31 13:54:48,267 bulkloader.py] [Thread-12] DataSourceThread: exiting
+[DEBUG    2010-08-31 13:54:48,276 bulkloader.py] Waiting for worker threads to finish...
+[DEBUG    2010-08-31 13:54:48,289 adaptive_thread_pool.py] [Thread-1] Got work item [1-10]
+[ERROR    2010-08-31 13:54:48,310 adaptive_thread_pool.py] [Thread-1] WorkerThread:
+Traceback (most recent call last):
+  File "/Applications/GoogleAppEngineLauncher.app/Contents/Resources/GoogleAppEngine-default.bundle/Contents/Resources/google_appengine/google/appengine/tools/adaptive_thread_pool.py", line 150, in WorkOnItems
+    status, instruction = item.PerformWork(self.__thread_pool)
+  File "/Applications/GoogleAppEngineLauncher.app/Contents/Resources/GoogleAppEngine-default.bundle/Contents/Resources/google_appengine/google/appengine/tools/bulkloader.py", line 691, in PerformWork
+    transfer_time = self._TransferItem(thread_pool)
+  File "/Applications/GoogleAppEngineLauncher.app/Contents/Resources/GoogleAppEngine-default.bundle/Contents/Resources/google_appengine/google/appengine/tools/bulkloader.py", line 846, in _TransferItem
+    self.content = self.request_manager.EncodeContent(self.rows)
+  File "/Applications/GoogleAppEngineLauncher.app/Contents/Resources/GoogleAppEngine-default.bundle/Contents/Resources/google_appengine/google/appengine/tools/bulkloader.py", line 1267, in EncodeContent
+    entity = loader.create_entity(values, key_name=key, parent=parent)
+  File "/Applications/GoogleAppEngineLauncher.app/Contents/Resources/GoogleAppEngine-default.bundle/Contents/Resources/google_appengine/google/appengine/tools/bulkloader.py", line 2524, in create_entity
+    entity = model_class(**properties)
+  File "/Applications/GoogleAppEngineLauncher.app/Contents/Resources/GoogleAppEngine-default.bundle/Contents/Resources/google_appengine/google/appengine/ext/db/__init__.py", line 813, in __init__
+    prop.__set__(self, value)
+  File "/Applications/GoogleAppEngineLauncher.app/Contents/Resources/GoogleAppEngine-default.bundle/Contents/Resources/google_appengine/google/appengine/ext/db/__init__.py", line 542, in __set__
+    value = self.validate(value)
+  File "/Applications/GoogleAppEngineLauncher.app/Contents/Resources/GoogleAppEngine-default.bundle/Contents/Resources/google_appengine/google/appengine/ext/db/__init__.py", line 2698, in validate
+    value = super(DateProperty, self).validate(value)
+  File "/Applications/GoogleAppEngineLauncher.app/Contents/Resources/GoogleAppEngine-default.bundle/Contents/Resources/google_appengine/google/appengine/ext/db/__init__.py", line 2607, in validate
+    (self.name, self.data_type.__name__))
+BadValueError: Property Geboortedatum must be a date
+[DEBUG    2010-08-31 13:54:48,332 adaptive_thread_pool.py] [Thread-1] WorkerThread: exiting
+[INFO     2010-08-31 13:54:48,333 adaptive_thread_pool.py] [Thread-2] Backing off due to errors: 1.0 seconds
+[INFO     2010-08-31 13:54:48,786 bulkloader.py] An error occurred. Shutting down...
+[DEBUG    2010-08-31 13:54:48,788 adaptive_thread_pool.py] [Thread-7] WorkerThread: exiting
+[DEBUG    2010-08-31 13:54:48,788 adaptive_thread_pool.py] [Thread-9] WorkerThread: exiting
+[DEBUG    2010-08-31 13:54:48,788 adaptive_thread_pool.py] [Thread-6] WorkerThread: exiting
+[DEBUG    2010-08-31 13:54:48,789 adaptive_thread_pool.py] [Thread-5] WorkerThread: exiting
+[DEBUG    2010-08-31 13:54:48,789 adaptive_thread_pool.py] [Thread-10] WorkerThread: exiting
+[DEBUG    2010-08-31 13:54:48,789 adaptive_thread_pool.py] [Thread-4] WorkerThread: exiting
+[DEBUG    2010-08-31 13:54:48,789 adaptive_thread_pool.py] [Thread-3] WorkerThread: exiting
+[DEBUG    2010-08-31 13:54:48,790 adaptive_thread_pool.py] [Thread-8] WorkerThread: exiting
+[DEBUG    2010-08-31 13:54:48,790 adaptive_thread_pool.py] Waiting for Anonymous_WorkerThread to exit
+[DEBUG    2010-08-31 13:54:48,790 adaptive_thread_pool.py] Waiting for Anonymous_WorkerThread to exit
+[DEBUG    2010-08-31 13:54:48,833 adaptive_thread_pool.py] [Thread-2] WorkerThread: exiting
+[DEBUG    2010-08-31 13:54:48,834 adaptive_thread_pool.py] Waiting for Anonymous_WorkerThread to exit
+[DEBUG    2010-08-31 13:54:48,834 adaptive_thread_pool.py] Waiting for Anonymous_WorkerThread to exit
+[DEBUG    2010-08-31 13:54:48,834 adaptive_thread_pool.py] Waiting for Anonymous_WorkerThread to exit
+[DEBUG    2010-08-31 13:54:48,834 adaptive_thread_pool.py] Waiting for Anonymous_WorkerThread to exit
+[DEBUG    2010-08-31 13:54:48,834 adaptive_thread_pool.py] Waiting for Anonymous_WorkerThread to exit
+[DEBUG    2010-08-31 13:54:48,834 adaptive_thread_pool.py] Waiting for Anonymous_WorkerThread to exit
+[DEBUG    2010-08-31 13:54:48,834 adaptive_thread_pool.py] Waiting for Anonymous_WorkerThread to exit
+[DEBUG    2010-08-31 13:54:48,834 adaptive_thread_pool.py] Waiting for Anonymous_WorkerThread to exit
+[ERROR    2010-08-31 13:54:48,835 adaptive_thread_pool.py] Error in Thread-1: Property Geboortedatum must be a date
+[DEBUG    2010-08-31 13:54:48,835 adaptive_thread_pool.py] Traceback (most recent call last):
+  File "/Applications/GoogleAppEngineLauncher.app/Contents/Resources/GoogleAppEngine-default.bundle/Contents/Resources/google_appengine/google/appengine/tools/adaptive_thread_pool.py", line 150, in WorkOnItems
+    status, instruction = item.PerformWork(self.__thread_pool)
+  File "/Applications/GoogleAppEngineLauncher.app/Contents/Resources/GoogleAppEngine-default.bundle/Contents/Resources/google_appengine/google/appengine/tools/bulkloader.py", line 691, in PerformWork
+    transfer_time = self._TransferItem(thread_pool)
+  File "/Applications/GoogleAppEngineLauncher.app/Contents/Resources/GoogleAppEngine-default.bundle/Contents/Resources/google_appengine/google/appengine/tools/bulkloader.py", line 846, in _TransferItem
+    self.content = self.request_manager.EncodeContent(self.rows)
+  File "/Applications/GoogleAppEngineLauncher.app/Contents/Resources/GoogleAppEngine-default.bundle/Contents/Resources/google_appengine/google/appengine/tools/bulkloader.py", line 1267, in EncodeContent
+    entity = loader.create_entity(values, key_name=key, parent=parent)
+  File "/Applications/GoogleAppEngineLauncher.app/Contents/Resources/GoogleAppEngine-default.bundle/Contents/Resources/google_appengine/google/appengine/tools/bulkloader.py", line 2524, in create_entity
+    entity = model_class(**properties)
+  File "/Applications/GoogleAppEngineLauncher.app/Contents/Resources/GoogleAppEngine-default.bundle/Contents/Resources/google_appengine/google/appengine/ext/db/__init__.py", line 813, in __init__
+    prop.__set__(self, value)
+  File "/Applications/GoogleAppEngineLauncher.app/Contents/Resources/GoogleAppEngine-default.bundle/Contents/Resources/google_appengine/google/appengine/ext/db/__init__.py", line 542, in __set__
+    value = self.validate(value)
+  File "/Applications/GoogleAppEngineLauncher.app/Contents/Resources/GoogleAppEngine-default.bundle/Contents/Resources/google_appengine/google/appengine/ext/db/__init__.py", line 2698, in validate
+    value = super(DateProperty, self).validate(value)
+  File "/Applications/GoogleAppEngineLauncher.app/Contents/Resources/GoogleAppEngine-default.bundle/Contents/Resources/google_appengine/google/appengine/ext/db/__init__.py", line 2607, in validate
+    (self.name, self.data_type.__name__))
+BadValueError: Property Geboortedatum must be a date
+
+[DEBUG    2010-08-31 13:54:48,846 bulkloader.py] Waiting for progress_thread to terminate...
+[DEBUG    2010-08-31 13:54:48,855 bulkloader.py] [Thread-11] ProgressTrackerThread: exiting
+[DEBUG    2010-08-31 13:54:48,856 bulkloader.py] ... done.
+[INFO     2010-08-31 13:54:48,857 bulkloader.py] 12 entites total, 0 previously transferred
+[INFO     2010-08-31 13:54:48,857 bulkloader.py] 0 entities (724 bytes) transferred in 1.2 seconds
+[INFO     2010-08-31 13:54:48,857 bulkloader.py] Some entities not successfully transferred

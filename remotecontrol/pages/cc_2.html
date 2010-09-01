@@ -1,0 +1,53 @@
+
+<img style="width:320px;height:480px;" src='pages/cc_2.jpg' id='im_cc_2' usemap="#clickmap_cc_2"/>
+<img id='juist' style="position:absolute;top:274;left:64;display:none;" src="pages/cc_juist.png"/>
+<img id='fout' style="position:absolute;top:349;left:64;display:none;" src="pages/cc_fout.png" />
+
+<style>
+	#bar {
+		webkit-transition-property: width;
+		-webkit-transition-duration: 5s;
+		-webkit-transition-timing-function:linear;
+	}
+</style>
+<script>
+	if(document.location.href.indexOf('control.html') == -1) {
+		// only do this on the device, not in the control
+			pageWeAreOn = $( '#im_cc_2' ).parent();
+				
+			$(pageWeAreOn).append("<div id='bar' style='background-color:rgba(255,1,1,0.5);position:absolute;top:216;left:24px;width:273px;height:22px;'></div>");
+						
+			$('#bar').one('webkitTransitionEnd', function() {
+				switchToPage('pages/cc_1.html', 'dissolve');
+			}); 	
+			
+
+
+			if( pageWeAreOn.is(':visible')  ) {
+				$(this).delay(1000, function() {
+					start();
+				});
+			}
+			else {
+				$(pageWeAreOn).bind("pageAnimationEnd", start );
+			}
+	}		
+		
+	function start() {
+		$('#bar').css('width', '0px');
+	}
+	function clicked(button) {
+		if(button == 1) {
+			$('#fout').hide();
+			$('#juist').show();
+		}
+		else if (button == 2) {
+			$('#juist').hide();
+			$('#fout').show();
+		}
+	}
+</script>
+<map name="clickmap_cc_2">
+	<area shape="rect" coords="64,274,254,327" onclick="clicked(1);" />
+	<area shape="rect" coords="64,349,254,405" onclick="clicked(2);" />
+</map>

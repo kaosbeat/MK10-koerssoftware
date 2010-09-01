@@ -1,0 +1,12 @@
+<img id='bestel_alert' class='alert' src="pages/alert_piet.png" style='display:none;' />
+<img src='pages/piet_bestel.jpg' usemap='#clickmappiet_bestel' />
+
+<script>
+$("#bestel_alert").bind("click", function() {
+	$("#bestel_alert").hide();
+});
+</script>
+<map name="clickmappiet_bestel">
+	<area shape="rect" coords="52,256,340,300" onclick="$('#bestel_alert').show();" />
+	<area shape="rect" coords="252,126,313,152" onclick="switchToPage('pages/piet_recept.html', 'dissolve');" />
+</map>

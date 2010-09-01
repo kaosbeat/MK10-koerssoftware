@@ -1,0 +1,45 @@
+/*CSS for jQuery Typing Demo*/
+
+body{
+	background: #f6f6ed url("img/goeshere.png") no-repeat top center;
+	font-family: arial, sans-serif;
+	text-align: center;
+	margin: 0;
+	padding: 0;
+}
+
+#wrapper{
+	text-align: left;
+	width: 960px;
+	margin: 0 auto;
+}
+
+#image-container{
+	text-align: center;
+	margin: 0 auto;
+	padding: 0;
+	position: absolute;
+	top: 105px;
+}
+
+
+.space-alert{
+	background: #191919;
+	padding: 20px;
+	width: 400px;
+	position: relative;
+	top: 390px;
+	margin: 0 auto;
+	display: none;
+	text-align: center;
+	color: #FFF;
+	font-size: 18px;
+}
+
+.fullscreen-image {
+    position: absolute;
+    display:none;
+    
+    
+}
+

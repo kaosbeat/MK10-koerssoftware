@@ -1,0 +1,106 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+body {
+	background: #FFF;
+	width: auto;
+	height: 100%;
+	font-family: 'Trebuchet MS', Arial, Sans-Serif;
+	font-size: 15px;
+	color: #474747;
+	line-height: 1.6em;
+}
+a, a:visited {
+	color: #3a9bc7;
+	text-decoration: none;
+}
+a:hover {
+	text-decoration: underline;
+}
+h1, h2, h3, h4, h5 {
+	text-transform: uppercase;
+	font-family: Bliss, 'Myriad Pro', 'Trebuchet MS', Arial, Sans-Serif;
+	color: #a1c117;
+}
+h1 a, h2 a, h3 a, h4 a,
+h1 a:visited, h2 a:visited, h3 a:visited, h4 a:visited {
+	text-decoration: none;
+	color: #a1c117;
+}
+h1 {
+	font-size: 1.93em;
+	line-height: 1.2em;
+	margin: 8px 0 38px 0;
+}
+h2 {
+	font-size: 1.47em;
+	line-height: 1.2em;
+	margin: 8px 0 15px 0;
+}
+h3 {
+	font-size: 1.20em;
+	line-height: 1.2em;
+	margin: 8px 0 15px 0;
+}
+h4 {
+	font-size: 1.07em;
+	line-height: 1.1em;
+	margin: 8px 0 15px 0;
+}
+h5 {
+	font-size: 1.07em;
+	line-height: 1.1em;
+	margin: 8px 0 15px 0;
+}
+a img {
+	border: 0;
+}
+ul {
+	padding-left: 40px;
+}
+pre {
+	background: #efefef;
+	border: 1px solid silver;
+	margin: 10px 0;
+	padding: 10px;
+	font-family: 'Courier New', Courier, monospace;
+}
+#logo {
+	background: url(../images/spritely_logo.png) 0 0 no-repeat;
+	width: 378px;
+	height: 121px;
+	position: absolute;
+	top: 7px;
+	left: 30px;
+	z-index: 1900;
+		text-indent: -9999px;
+}
+#container  {
+	min-width:900px;
+	padding-top:359px;
+	position:relative;
+	width:100%;
+}
+#mainContent {
+	padding: 40px 30px 30px 30px;
+}
+#mainContent h1 {
+	text-align: -9999px;
+	height: 0;
+	overflow: hidden;
+	margin: 0;
+}
+#content {
+	margin-right: 250px;
+}
+#sidebar {
+	position: absolute;
+	top: 448px;
+	width: 200px;
+	right: 30px;
+}
+.panel {
+	margin-bottom: 2em;
+	display: none;
+}

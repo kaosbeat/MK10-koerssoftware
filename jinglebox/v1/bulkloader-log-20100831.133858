@@ -1,0 +1,81 @@
+[INFO     2010-08-31 13:38:58,919 bulkloader.py] Logging to bulkloader-log-20100831.133858
+[INFO     2010-08-31 13:38:58,919 bulkloader.py] Throttling transfers:
+[INFO     2010-08-31 13:38:58,919 bulkloader.py] Bandwidth: 250000 bytes/second
+[INFO     2010-08-31 13:38:58,919 bulkloader.py] HTTP connections: 8/second
+[INFO     2010-08-31 13:38:58,919 bulkloader.py] Entities inserted/fetched/modified: 20/second
+[INFO     2010-08-31 13:38:58,919 bulkloader.py] Batch Size: 10
+[INFO     2010-08-31 13:38:58,920 bulkloader.py] Opening database: bulkloader-progress-20100831.133858.sql3
+[DEBUG    2010-08-31 13:38:58,965 adaptive_thread_pool.py] [Thread-1] WorkerThread: started
+[DEBUG    2010-08-31 13:38:58,975 adaptive_thread_pool.py] [Thread-2] WorkerThread: started
+[DEBUG    2010-08-31 13:38:58,985 adaptive_thread_pool.py] [Thread-3] WorkerThread: started
+[DEBUG    2010-08-31 13:38:58,996 adaptive_thread_pool.py] [Thread-4] WorkerThread: started
+[DEBUG    2010-08-31 13:38:59,006 adaptive_thread_pool.py] [Thread-5] WorkerThread: started
+[DEBUG    2010-08-31 13:38:59,016 adaptive_thread_pool.py] [Thread-6] WorkerThread: started
+[DEBUG    2010-08-31 13:38:59,027 adaptive_thread_pool.py] [Thread-7] WorkerThread: started
+[DEBUG    2010-08-31 13:38:59,037 adaptive_thread_pool.py] [Thread-8] WorkerThread: started
+[DEBUG    2010-08-31 13:38:59,048 adaptive_thread_pool.py] [Thread-9] WorkerThread: started
+[DEBUG    2010-08-31 13:38:59,058 adaptive_thread_pool.py] [Thread-10] WorkerThread: started
+[DEBUG    2010-08-31 13:38:59,069 bulkloader.py] Configuring remote_api. url_path = /remote_api, servername = mk10koers.appspot.com
+[DEBUG    2010-08-31 13:38:59,123 bulkloader.py] Bulkloader using app_id: mk10koers
+[INFO     2010-08-31 13:38:59,123 bulkloader.py] Connecting to mk10koers.appspot.com/remote_api
+[DEBUG    2010-08-31 13:38:59,465 bulkloader.py] [Thread-11] ProgressTrackerThread: started
+[DEBUG    2010-08-31 13:38:59,476 bulkloader.py] [Thread-12] DataSourceThread: started
+[INFO     2010-08-31 13:38:59,476 bulkloader.py] Starting import; maximum 10 entities per post
+[DEBUG    2010-08-31 13:38:59,489 bulkloader.py] [Thread-12] DataSourceThread: exiting
+[DEBUG    2010-08-31 13:38:59,496 bulkloader.py] Waiting for worker threads to finish...
+[DEBUG    2010-08-31 13:38:59,521 adaptive_thread_pool.py] [Thread-1] Got work item [1-10]
+[ERROR    2010-08-31 13:38:59,606 adaptive_thread_pool.py] [Thread-1] WorkerThread:
+Traceback (most recent call last):
+  File "/Applications/GoogleAppEngineLauncher.app/Contents/Resources/GoogleAppEngine-default.bundle/Contents/Resources/google_appengine/google/appengine/tools/adaptive_thread_pool.py", line 150, in WorkOnItems
+    status, instruction = item.PerformWork(self.__thread_pool)
+  File "/Applications/GoogleAppEngineLauncher.app/Contents/Resources/GoogleAppEngine-default.bundle/Contents/Resources/google_appengine/google/appengine/tools/bulkloader.py", line 691, in PerformWork
+    transfer_time = self._TransferItem(thread_pool)
+  File "/Applications/GoogleAppEngineLauncher.app/Contents/Resources/GoogleAppEngine-default.bundle/Contents/Resources/google_appengine/google/appengine/tools/bulkloader.py", line 846, in _TransferItem
+    self.content = self.request_manager.EncodeContent(self.rows)
+  File "/Applications/GoogleAppEngineLauncher.app/Contents/Resources/GoogleAppEngine-default.bundle/Contents/Resources/google_appengine/google/appengine/tools/bulkloader.py", line 1267, in EncodeContent
+    entity = loader.create_entity(values, key_name=key, parent=parent)
+  File "/Applications/GoogleAppEngineLauncher.app/Contents/Resources/GoogleAppEngine-default.bundle/Contents/Resources/google_appengine/google/appengine/tools/bulkloader.py", line 2511, in create_entity
+    (len(self.__properties), len(values)))
+AssertionError: Expected 10 columns, found 16.
+[DEBUG    2010-08-31 13:38:59,609 adaptive_thread_pool.py] [Thread-1] WorkerThread: exiting
+[INFO     2010-08-31 13:38:59,609 adaptive_thread_pool.py] [Thread-2] Backing off due to errors: 1.0 seconds
+[INFO     2010-08-31 13:39:00,008 bulkloader.py] An error occurred. Shutting down...
+[DEBUG    2010-08-31 13:39:00,052 adaptive_thread_pool.py] [Thread-3] WorkerThread: exiting
+[DEBUG    2010-08-31 13:39:00,052 adaptive_thread_pool.py] [Thread-4] WorkerThread: exiting
+[DEBUG    2010-08-31 13:39:00,052 adaptive_thread_pool.py] [Thread-5] WorkerThread: exiting
+[DEBUG    2010-08-31 13:39:00,053 adaptive_thread_pool.py] [Thread-6] WorkerThread: exiting
+[DEBUG    2010-08-31 13:39:00,053 adaptive_thread_pool.py] [Thread-7] WorkerThread: exiting
+[DEBUG    2010-08-31 13:39:00,053 adaptive_thread_pool.py] [Thread-8] WorkerThread: exiting
+[DEBUG    2010-08-31 13:39:00,053 adaptive_thread_pool.py] [Thread-10] WorkerThread: exiting
+[DEBUG    2010-08-31 13:39:00,054 adaptive_thread_pool.py] [Thread-9] WorkerThread: exiting
+[DEBUG    2010-08-31 13:39:00,055 adaptive_thread_pool.py] Waiting for Anonymous_WorkerThread to exit
+[DEBUG    2010-08-31 13:39:00,056 adaptive_thread_pool.py] Waiting for Anonymous_WorkerThread to exit
+[DEBUG    2010-08-31 13:39:00,110 adaptive_thread_pool.py] [Thread-2] WorkerThread: exiting
+[DEBUG    2010-08-31 13:39:00,110 adaptive_thread_pool.py] Waiting for Anonymous_WorkerThread to exit
+[DEBUG    2010-08-31 13:39:00,110 adaptive_thread_pool.py] Waiting for Anonymous_WorkerThread to exit
+[DEBUG    2010-08-31 13:39:00,110 adaptive_thread_pool.py] Waiting for Anonymous_WorkerThread to exit
+[DEBUG    2010-08-31 13:39:00,110 adaptive_thread_pool.py] Waiting for Anonymous_WorkerThread to exit
+[DEBUG    2010-08-31 13:39:00,111 adaptive_thread_pool.py] Waiting for Anonymous_WorkerThread to exit
+[DEBUG    2010-08-31 13:39:00,111 adaptive_thread_pool.py] Waiting for Anonymous_WorkerThread to exit
+[DEBUG    2010-08-31 13:39:00,111 adaptive_thread_pool.py] Waiting for Anonymous_WorkerThread to exit
+[DEBUG    2010-08-31 13:39:00,111 adaptive_thread_pool.py] Waiting for Anonymous_WorkerThread to exit
+[ERROR    2010-08-31 13:39:00,111 adaptive_thread_pool.py] Error in Thread-1: Expected 10 columns, found 16.
+[DEBUG    2010-08-31 13:39:00,111 adaptive_thread_pool.py] Traceback (most recent call last):
+  File "/Applications/GoogleAppEngineLauncher.app/Contents/Resources/GoogleAppEngine-default.bundle/Contents/Resources/google_appengine/google/appengine/tools/adaptive_thread_pool.py", line 150, in WorkOnItems
+    status, instruction = item.PerformWork(self.__thread_pool)
+  File "/Applications/GoogleAppEngineLauncher.app/Contents/Resources/GoogleAppEngine-default.bundle/Contents/Resources/google_appengine/google/appengine/tools/bulkloader.py", line 691, in PerformWork
+    transfer_time = self._TransferItem(thread_pool)
+  File "/Applications/GoogleAppEngineLauncher.app/Contents/Resources/GoogleAppEngine-default.bundle/Contents/Resources/google_appengine/google/appengine/tools/bulkloader.py", line 846, in _TransferItem
+    self.content = self.request_manager.EncodeContent(self.rows)
+  File "/Applications/GoogleAppEngineLauncher.app/Contents/Resources/GoogleAppEngine-default.bundle/Contents/Resources/google_appengine/google/appengine/tools/bulkloader.py", line 1267, in EncodeContent
+    entity = loader.create_entity(values, key_name=key, parent=parent)
+  File "/Applications/GoogleAppEngineLauncher.app/Contents/Resources/GoogleAppEngine-default.bundle/Contents/Resources/google_appengine/google/appengine/tools/bulkloader.py", line 2511, in create_entity
+    (len(self.__properties), len(values)))
+AssertionError: Expected 10 columns, found 16.
+
+[DEBUG    2010-08-31 13:39:00,122 bulkloader.py] Waiting for progress_thread to terminate...
+[DEBUG    2010-08-31 13:39:00,206 bulkloader.py] [Thread-11] ProgressTrackerThread: exiting
+[DEBUG    2010-08-31 13:39:00,211 bulkloader.py] ... done.
+[INFO     2010-08-31 13:39:00,211 bulkloader.py] 13 entites total, 0 previously transferred
+[INFO     2010-08-31 13:39:00,211 bulkloader.py] 0 entities (724 bytes) transferred in 1.3 seconds
+[INFO     2010-08-31 13:39:00,211 bulkloader.py] Some entities not successfully transferred

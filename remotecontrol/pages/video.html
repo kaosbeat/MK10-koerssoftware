@@ -1,0 +1,33 @@
+<!-- video width="300" height="200" id="player1" src="http://labs.vrt.be/cosyn-demo/vod/PeterLive.ssm/PeterLive-825k.m3u8" preload="auto" autoplay controls  style="width:300px;height:200px;">video</video -->
+
+<div id='vid'></div>
+<script>
+	var pageWeAreOn = null;
+	
+	 if(document.location.href.indexOf('control.html') == -1) {
+
+		var newId = ('video' + new Date().getTime()).toString();
+		$('#vid').attr('id', newId);
+		
+		pageWeAreOn = $( '#' + newId ).parent();
+
+		if( pageWeAreOn.is(':visible')  ) {
+			doStuff();
+		}
+		else {
+			$(pageWeAreOn).one("pageAnimationEnd", doStuff );
+		}	
+	} 
+	
+	function doStuff() {
+		alert('test');
+		var vidPlayerId = pageWeAreOn.attr('id') + '_videoPlayer';
+		$( pageWeAreOn ).html('<video src="http://labs.vrt.be/cosyn-demo/vod/PeterLive.ssm/PeterLive-825k.m3u8" id="' + vidPlayerId + '" controls height="430px" width="100%" autoplay>test</video>');
+		var player = $('#' + vidPlayerId ).get(0);
+		player.style.display ='block';
+		player.style.visibility = 'visible';
+		player.load();
+		player.play();
+
+	}
+</script>

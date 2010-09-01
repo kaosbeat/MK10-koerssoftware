@@ -1,0 +1,81 @@
+[INFO     2010-08-31 13:37:29,707 bulkloader.py] Logging to bulkloader-log-20100831.133729
+[INFO     2010-08-31 13:37:29,708 bulkloader.py] Throttling transfers:
+[INFO     2010-08-31 13:37:29,708 bulkloader.py] Bandwidth: 250000 bytes/second
+[INFO     2010-08-31 13:37:29,708 bulkloader.py] HTTP connections: 8/second
+[INFO     2010-08-31 13:37:29,708 bulkloader.py] Entities inserted/fetched/modified: 20/second
+[INFO     2010-08-31 13:37:29,708 bulkloader.py] Batch Size: 10
+[INFO     2010-08-31 13:37:29,710 bulkloader.py] Opening database: bulkloader-progress-20100831.133729.sql3
+[DEBUG    2010-08-31 13:37:29,728 adaptive_thread_pool.py] [Thread-1] WorkerThread: started
+[DEBUG    2010-08-31 13:37:29,738 adaptive_thread_pool.py] [Thread-2] WorkerThread: started
+[DEBUG    2010-08-31 13:37:29,748 adaptive_thread_pool.py] [Thread-3] WorkerThread: started
+[DEBUG    2010-08-31 13:37:29,759 adaptive_thread_pool.py] [Thread-4] WorkerThread: started
+[DEBUG    2010-08-31 13:37:29,770 adaptive_thread_pool.py] [Thread-5] WorkerThread: started
+[DEBUG    2010-08-31 13:37:29,780 adaptive_thread_pool.py] [Thread-6] WorkerThread: started
+[DEBUG    2010-08-31 13:37:29,790 adaptive_thread_pool.py] [Thread-7] WorkerThread: started
+[DEBUG    2010-08-31 13:37:29,800 adaptive_thread_pool.py] [Thread-8] WorkerThread: started
+[DEBUG    2010-08-31 13:37:29,811 adaptive_thread_pool.py] [Thread-9] WorkerThread: started
+[DEBUG    2010-08-31 13:37:29,821 adaptive_thread_pool.py] [Thread-10] WorkerThread: started
+[DEBUG    2010-08-31 13:37:29,832 bulkloader.py] Configuring remote_api. url_path = /remote_api, servername = mk10koers.appspot.com
+[DEBUG    2010-08-31 13:37:29,909 bulkloader.py] Bulkloader using app_id: mk10koers
+[INFO     2010-08-31 13:37:29,909 bulkloader.py] Connecting to mk10koers.appspot.com/remote_api
+[DEBUG    2010-08-31 13:37:30,252 bulkloader.py] [Thread-11] ProgressTrackerThread: started
+[DEBUG    2010-08-31 13:37:30,262 bulkloader.py] [Thread-12] DataSourceThread: started
+[INFO     2010-08-31 13:37:30,262 bulkloader.py] Starting import; maximum 10 entities per post
+[DEBUG    2010-08-31 13:37:30,284 bulkloader.py] [Thread-12] DataSourceThread: exiting
+[DEBUG    2010-08-31 13:37:30,292 bulkloader.py] Waiting for worker threads to finish...
+[DEBUG    2010-08-31 13:37:30,301 adaptive_thread_pool.py] [Thread-1] Got work item [1-10]
+[ERROR    2010-08-31 13:37:30,315 adaptive_thread_pool.py] [Thread-1] WorkerThread:
+Traceback (most recent call last):
+  File "/Applications/GoogleAppEngineLauncher.app/Contents/Resources/GoogleAppEngine-default.bundle/Contents/Resources/google_appengine/google/appengine/tools/adaptive_thread_pool.py", line 150, in WorkOnItems
+    status, instruction = item.PerformWork(self.__thread_pool)
+  File "/Applications/GoogleAppEngineLauncher.app/Contents/Resources/GoogleAppEngine-default.bundle/Contents/Resources/google_appengine/google/appengine/tools/bulkloader.py", line 691, in PerformWork
+    transfer_time = self._TransferItem(thread_pool)
+  File "/Applications/GoogleAppEngineLauncher.app/Contents/Resources/GoogleAppEngine-default.bundle/Contents/Resources/google_appengine/google/appengine/tools/bulkloader.py", line 846, in _TransferItem
+    self.content = self.request_manager.EncodeContent(self.rows)
+  File "/Applications/GoogleAppEngineLauncher.app/Contents/Resources/GoogleAppEngine-default.bundle/Contents/Resources/google_appengine/google/appengine/tools/bulkloader.py", line 1267, in EncodeContent
+    entity = loader.create_entity(values, key_name=key, parent=parent)
+  File "/Applications/GoogleAppEngineLauncher.app/Contents/Resources/GoogleAppEngine-default.bundle/Contents/Resources/google_appengine/google/appengine/tools/bulkloader.py", line 2522, in create_entity
+    properties[name] = converter(val)
+ValueError: invalid literal for int() with base 10: 'Gewicht'
+[DEBUG    2010-08-31 13:37:30,317 adaptive_thread_pool.py] [Thread-1] WorkerThread: exiting
+[INFO     2010-08-31 13:37:30,317 adaptive_thread_pool.py] [Thread-2] Backing off due to errors: 1.0 seconds
+[INFO     2010-08-31 13:37:30,803 bulkloader.py] An error occurred. Shutting down...
+[DEBUG    2010-08-31 13:37:30,804 adaptive_thread_pool.py] [Thread-4] WorkerThread: exiting
+[DEBUG    2010-08-31 13:37:30,804 adaptive_thread_pool.py] [Thread-3] WorkerThread: exiting
+[DEBUG    2010-08-31 13:37:30,805 adaptive_thread_pool.py] [Thread-5] WorkerThread: exiting
+[DEBUG    2010-08-31 13:37:30,805 adaptive_thread_pool.py] [Thread-6] WorkerThread: exiting
+[DEBUG    2010-08-31 13:37:30,805 adaptive_thread_pool.py] [Thread-7] WorkerThread: exiting
+[DEBUG    2010-08-31 13:37:30,805 adaptive_thread_pool.py] [Thread-8] WorkerThread: exiting
+[DEBUG    2010-08-31 13:37:30,806 adaptive_thread_pool.py] [Thread-10] WorkerThread: exiting
+[DEBUG    2010-08-31 13:37:30,806 adaptive_thread_pool.py] [Thread-9] WorkerThread: exiting
+[DEBUG    2010-08-31 13:37:30,807 adaptive_thread_pool.py] Waiting for Anonymous_WorkerThread to exit
+[DEBUG    2010-08-31 13:37:30,807 adaptive_thread_pool.py] Waiting for Anonymous_WorkerThread to exit
+[DEBUG    2010-08-31 13:37:30,818 adaptive_thread_pool.py] [Thread-2] WorkerThread: exiting
+[DEBUG    2010-08-31 13:37:30,818 adaptive_thread_pool.py] Waiting for Anonymous_WorkerThread to exit
+[DEBUG    2010-08-31 13:37:30,818 adaptive_thread_pool.py] Waiting for Anonymous_WorkerThread to exit
+[DEBUG    2010-08-31 13:37:30,818 adaptive_thread_pool.py] Waiting for Anonymous_WorkerThread to exit
+[DEBUG    2010-08-31 13:37:30,818 adaptive_thread_pool.py] Waiting for Anonymous_WorkerThread to exit
+[DEBUG    2010-08-31 13:37:30,818 adaptive_thread_pool.py] Waiting for Anonymous_WorkerThread to exit
+[DEBUG    2010-08-31 13:37:30,818 adaptive_thread_pool.py] Waiting for Anonymous_WorkerThread to exit
+[DEBUG    2010-08-31 13:37:30,819 adaptive_thread_pool.py] Waiting for Anonymous_WorkerThread to exit
+[DEBUG    2010-08-31 13:37:30,819 adaptive_thread_pool.py] Waiting for Anonymous_WorkerThread to exit
+[ERROR    2010-08-31 13:37:30,819 adaptive_thread_pool.py] Error in Thread-1: invalid literal for int() with base 10: 'Gewicht'
+[DEBUG    2010-08-31 13:37:30,819 adaptive_thread_pool.py] Traceback (most recent call last):
+  File "/Applications/GoogleAppEngineLauncher.app/Contents/Resources/GoogleAppEngine-default.bundle/Contents/Resources/google_appengine/google/appengine/tools/adaptive_thread_pool.py", line 150, in WorkOnItems
+    status, instruction = item.PerformWork(self.__thread_pool)
+  File "/Applications/GoogleAppEngineLauncher.app/Contents/Resources/GoogleAppEngine-default.bundle/Contents/Resources/google_appengine/google/appengine/tools/bulkloader.py", line 691, in PerformWork
+    transfer_time = self._TransferItem(thread_pool)
+  File "/Applications/GoogleAppEngineLauncher.app/Contents/Resources/GoogleAppEngine-default.bundle/Contents/Resources/google_appengine/google/appengine/tools/bulkloader.py", line 846, in _TransferItem
+    self.content = self.request_manager.EncodeContent(self.rows)
+  File "/Applications/GoogleAppEngineLauncher.app/Contents/Resources/GoogleAppEngine-default.bundle/Contents/Resources/google_appengine/google/appengine/tools/bulkloader.py", line 1267, in EncodeContent
+    entity = loader.create_entity(values, key_name=key, parent=parent)
+  File "/Applications/GoogleAppEngineLauncher.app/Contents/Resources/GoogleAppEngine-default.bundle/Contents/Resources/google_appengine/google/appengine/tools/bulkloader.py", line 2522, in create_entity
+    properties[name] = converter(val)
+ValueError: invalid literal for int() with base 10: 'Gewicht'
+
+[DEBUG    2010-08-31 13:37:30,830 bulkloader.py] Waiting for progress_thread to terminate...
+[DEBUG    2010-08-31 13:37:30,930 bulkloader.py] [Thread-11] ProgressTrackerThread: exiting
+[DEBUG    2010-08-31 13:37:30,969 bulkloader.py] ... done.
+[INFO     2010-08-31 13:37:30,969 bulkloader.py] 13 entites total, 0 previously transferred
+[INFO     2010-08-31 13:37:30,969 bulkloader.py] 0 entities (724 bytes) transferred in 1.3 seconds
+[INFO     2010-08-31 13:37:30,970 bulkloader.py] Some entities not successfully transferred

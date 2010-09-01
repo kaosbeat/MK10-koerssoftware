@@ -1,0 +1,143 @@
+<html>
+<head>
+	<title>medialab iPad App</title>
+	<meta name = "viewport" content = "user-scalable=no, width=device-width">
+	
+    <style type="text/css" media="screen">@import "jqtouch/jqtouch.css";</style>
+	<script src="http://www.google.com/jsapi"></script>
+	<script language="javascript">
+		google.load("jquery", "1.4.2");
+	</script>
+	<script src="/comet.js" type="text/javascript"></script>
+	
+	<script src="jqtouch/jqtouch.js" type="application/x-javascript" charset="utf-8"></script>
+	
+	
+	<style>
+		body {
+			margin:0px;
+			padding:0px;
+			/*width:1024px;*/
+		}
+		
+	/*	#page1 {
+		}
+		#page2 {
+		}
+	*/	
+		.alert {
+			width:285px;
+			height:137px;
+			position:absolute;
+			left:241px;
+			top: 430px;
+		}
+		
+	</style>
+	
+	<script>
+	 var jQT = new $.jQTouch({
+            statusBar: 'black-translucent',
+			fullScreen: true,
+		 	startupScreen: './startup.png',
+			slideSelector:  '#page1',
+			icon: 'canvascrack_icon.png'
+		 
+        });
+
+		// Load the content of a subpage into the div
+		function loadUrlInDiv(url, div, async) {
+			$.ajax({
+	   			url: url,
+	   			success: function( data ){
+					$( div ).unbind();
+					$( div ).html( data );
+	   			},
+				async:   async
+	 		});
+	
+			fayeClient.publish('/stat', {text: 'loaded', div: div, url:url} );
+		}
+		
+		function switchToPage(url, animation) {
+
+			var curPage = $("div.current");
+
+			var targetPage = null;
+			if(curPage.attr('id') == 'page1') targetPage = '#page2';
+			else targetPage = '#page1';
+			
+			loadUrlInDiv(url, targetPage, false);
+			gotoWrapper(targetPage, animation);
+		}
+	
+		/* Wrap the standard goto functie zodat we ook steeds een statusupdate terugsturen */
+		function gotoWrapper(page, animation) {
+			fayeClient.publish('/stat', {text: 'goto', div: page });	
+			jQT.goTo(page, animation);
+		}
+	
+		var fayeClient = null;
+		$(document).ready(function() {
+
+			fayeClient = new Faye.Client('/comet');
+			fayeClient.publish('/stat', {text: 'alive' });
+
+			fayeClient.subscribe('/messages', function(message) {
+
+				if( message.cmd == 'GoTo') {
+					gotoWrapper( message.text, message.params );
+				}
+				else if( message.cmd == 'Load' ) {
+					loadUrlInDiv(message.text, message.target, true);
+				}
+				else if( message.cmd == 'ShowAlert') {
+					$("#alertwrapper").bind("click", function() {
+						jQT.goTo('pages/piet2.html', 'slideup');
+					})
+					$("#alertwrapper").show();
+				}
+			});			
+
+	/*		$("#page1").live("swipe", function(ev, info) {
+					alert('swipe ' + info.direction);
+					if( info.direction == 'left') {
+						jQT.goTo('#page2', 'slide');
+					}
+			});
+	*/
+	
+			$("#page1").live("swipe", function(ev, info) {
+				if( info.direction == 'left') {
+					jQT.goTo('#page2', 'slide');
+				}
+			});
+			
+			$("#page2").live("swipe", function(ev, info) {
+				if( info.direction == 'right') {
+					jQT.goTo('#page1', 'slide', true);
+				}
+			});
+
+			// The initial startup screen
+//			loadUrlInDiv('pages/uki_puzzel.html', '#page1', false);
+			loadUrlInDiv('pages/startscreen.html', '#page1', false);
+			loadUrlInDiv('pages/jupiler.html', '#page2', false);
+				
+		});
+	</script>
+</head>
+
+<body>
+	<div id="jqt">
+		<div id="page1" class="current slide"></div>
+	
+		<div id="page2" class="slide"></div>
+		
+		<div id="alertwrapper"><img id='alert' class='alert' src="pages/alert_piet.png"></div>
+		
+		<div id="logging"></div>
+		
+	</div>
+</body>
+</html>

@@ -1,0 +1,120 @@
+<html>
+<head>
+	<meta name = "viewport" content = "user-scalable=no, width=device-width">
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+	<style>
+		body {
+			margin:0px;
+			width: 768px;
+			height:1024px;
+		}
+		
+		#alert {
+			width:285px;
+			height:137px;
+			position:absolute;
+			left:241px;
+			top: 430px;
+		}
+		#app1 {
+			position:absolute;
+			top:413px;
+			left:260px;
+		}
+	/*	.appicon {
+			width:72px;
+			height:72px;
+			-webkit-transition-property: all;
+		    -webkit-transition-duration: 0.5s;
+		    -webkit-transition-timing-function: default; 
+		} */
+		
+	/*	.animating {
+			-webkit-transform: rotate(360deg) scale(2);
+		} */
+		
+			.bounce {
+			  -webkit-animation-name: bounce;
+			  -webkit-animation-duration: 0.4s;
+			  -webkit-animation-iteration-count: 4;
+			}
+		
+		@-webkit-keyframes bounce {
+	      from {
+	        -webkit-transform: translateY(0px);
+			-webkit-animation-timing-function:linear;
+	      }
+
+	      50% {
+	        -webkit-transform: translateY(-25px);
+			-webkit-transform: rotate(180deg);
+	        -webkit-animation-timing-function: ease-out;
+	      }
+/*
+	      75% {
+	        -webkit-transform: translateY(75px);
+	        -webkit-animation-timing-function: ease-in;
+	      }*/
+
+	      to {
+	        -webkit-transform: translateY(0px);
+				-webkit-animation-timing-function:linear;
+	      }
+	    }
+	</style>
+	<script> /*
+      function hasClass(ele,cls) {
+		return ele.className.match(new RegExp('(\\s|^)'+cls+'(\\s|$)'));
+	}
+
+	function addClass(ele,cls) {
+		if (!this.hasClass(ele,cls)) ele.className += " "+cls;
+	}
+
+	function removeClass(ele,cls) {
+		if (hasClass(ele,cls)) {
+	    	var reg = new RegExp('(\\s|^)'+cls+'(\\s|$)');
+			ele.className=ele.className.replace(reg,' ');
+		}
+	}
+	
+	function restartBounce(element)
+
+	{
+
+	  element.style.webkitAnimationName = '';
+
+	  window.setTimeout(function() {
+
+	    element.style.webkitAnimationName = 'bounce';
+
+	  }, 0);
+
+	}
+	
+	
+
+		function grow() {
+
+		    box = document.getElementById( "app1" );
+		/*	addClass( box, 'animating'); * /
+			box.addEventListener( 'webkitAnimationEnd', function( event ) { removeClass(box, 'bounce'); }, false ); 
+		//	box.style.webkitAnimationName = 'bounce';
+	//	restartBounce( box );
+		addClass(box, 'bounce');
+		}
+		
+		function BlockMove(event) {
+	  		// Tell Safari not to move the window.
+	  		event.preventDefault() ;
+	 	} */
+	</script>
+</head>
+<body ontouchmove="BlockMove(event);">
+	<img id='alert' src="alert_piet.png">
+	<img src="bg.png" />
+	<!-- img src="app.png" id="app1" onclick='grow();' / -->
+	
+
+</body>
