@@ -1,20 +1,73 @@
 <html>
+<head>
+<script src="/js/jquery-1.4.2.js" type="text/javascript" charset="utf-8"></script>
+<script src="/js/ui.core.js" type="text/javascript" charset="utf-8"></script>
+<script src="/js/ui.dropdownchecklist.js" type="text/javascript" charset="utf-8"></script>
+
+<link rel="stylesheet" type="text/css" href="/css/ui.dropdownchecklist.css" />
+    <link rel="stylesheet" type="text/css" href="demo.css" />
+<script type="text/javascript">
+
+$(document).ready(function() {
+          $("#eventsselectorID").change(function () {
+          var str = "";
+          $("#eventsselectorID option:selected").each(function () {
+                str += $(this).text() + ",";
+              });
+          $("#inputevents").attr("value", str);
+         
+        })
+        .change(); 
+});
+</script>
+ <script type="text/javascript">
+ 
+</script>
+</head>
 <body>
 
 <form action="/addCoureur2DB" method="post">
-            <div><input name="Voornaam" rows="1" cols="21"></input>Voornaam</div>
+            <div><input name="Voornaam" rows="1" cols="21">Voornaam</div>
             <div><input name="Familienaam" rows="1" cols="21"></input>Familienaam</div>
-            <div><input name="Geslacht" rows="1" cols="21"></input>Geslacht</div>
-            <div><input name="Geboortedatum" rows="1" cols="21"></input>GeboorteDatum</div>
-            <div><input name="Gewicht" rows="1" cols="21"></input>Gewicht</div>
+            <div><select style="float:left" name="Geslacht" >
+                <option>man</option>
+                <option>vrouw</option>
+            </select>Geslacht<p>
+            <div><input name="Geboortedatum" rows="1" cols="21"></input>Geboortedatum</div>
+            <div><input name="Gewicht" rows="1" cols="21"></input>Gewicht -- ALLEEN CIJFERS</div>
             <div><input name="Doping" rows="1" cols="21"></input>Doping</div>
-            <div><input name="Ploeg" rows="1" cols="21"></input>Ploeg</div>
-            <div><input name="email" rows="1" cols="21"></input>email</div>
-            <div><input name="Lengte" rows="1" cols="21"></input>Lengte</div>
+            <div><select style="float:left" name="Ploeg" >
+                <option>weba</option>
+                <option>gandagas</option>
+                <option>frietkub</option>
+                <option>frietmeu</option>
+                <option>cafeliberty</option>
+                <option>area</option>
+                
+            </select>Ploeg<p>
+            <div><input name="Lengte" rows="1" cols="21"></input>Lengte  -- ALLEEN CIJFERS</div>
             <div><input name="RugID" rows="1" cols="21"></input>RugID</div>
-            <div><label>Avatar:</label></div><div><input type="file" name="Avatar"/></<div><input type="submit" value="Submit"></div>
+            <div id="eventlist"><input id="inputevents" name="events" rows="1" cols="200" value="blah">selecteer *alle* events, hou Ctrl of Cmd ingedrukt om meerdere events te selecteren</input></div>
+            <div><input type="submit" value="Submit"></div>
 </form>
+<div height="550px">
+ <select id="eventsselectorID" style="float:left" name="eventselector" multiple="multiple">
+                <option>Crisis</option>
+                <option>Ontwikkeling</option>
+                <option>Lagereschooljongelingen</option>
+                <option>Lagereschoolminiemen</option>
+                <option>Kleutersmet2wielen</option>
+                <option>Kleutersmet2extrawielen</option>
+                <option>Peutersmet3wielen</option>
+                <option>Moedermetkind</option>
+                <option>Blokkenronde</option>
+                <option>MK2010</option>
+                <option>pepememe</option>  
+                <option>temptation</option> 
+            </select>
 </div>
 
+ 
+</div>
 </body>
 </html>

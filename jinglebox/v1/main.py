@@ -19,57 +19,47 @@ from google.appengine.api import memcache
 from google.appengine.ext.db import GqlQuery
 
 class Coureur(db.Model):
-    timestamp = db.DateTimeProperty()
     RugID = db.IntegerProperty()
     Voornaam = db.StringProperty()
     Familienaam = db.StringProperty()
     Geslacht = db.StringProperty()
-    Geboortedatum = db.DateProperty()
+    Geboortedatum = db.StringProperty()
     Gewicht = db.IntegerProperty()
     Doping = db.StringProperty()
     Ploeg = db.StringProperty()
-    email = db.EmailProperty()
     Lengte = db.IntegerProperty()
-    Avatar = db.BlobProperty()
+    Awards = db.StringListProperty()
+    Events = db.StringListProperty()
 
-
-def getdom ():
-
-    url = "https://spreadsheets.google.com/feeds/list/0At25_ezMnvvWdEIxUmVXUWdfN1RnVFQtV1J0b0dYQkE/1/private/full"
-    urlpublic = "https://spreadsheets.google.com/feeds/list/0AtwfWMwMK9ijdGFGeVdzc0hDS0lQb21sdGozUDZuMEE&hl/1/public/full"
-    urlcsv = "https://spreadsheets.google.com/feeds/download/spreadsheets/Export?key=0At25_ezMnvvWdEIxUmVXUWdfN1RnVFQtV1J0b0dYQkE&exportFormat=csv"
-
-    result = urlfetch.fetch(urlcsv,' ','get')
-    
-    print result.content
   
 class showProfile(webapp.RequestHandler):
     def get(self):
         rugid = int(self.request.get('rugid'))
-        #print rugid                                   
-        
-      
-        
         # The Query interface prepares a query using instance methods.
         q = Coureur.all()
         q.filter("RugID =", rugid)
-        results = q.fetch(1)
+        p = q.fetch(1)
+        #print p[0].Awards[0]
         #print results
-        for p in results:
-            logging.debug( "%s %s, %s inches tall" % (p.Voornaam, p.Familienaam, p.Lengte))
+        #for p in results:
+        #    logging.debug( "%s %s, %s inches tall" % (p.Voornaam, p.Familienaam, p.Lengte))
+        #    p.events = ["moederkind", "memepepe", "crisis"]
         path = os.path.join(os.path.dirname(__file__), 'profile.html')
         html = template.render(path,{
-                           'Voornaam': p.Voornaam,
-                           'RugID': p.RugID,
-                           'Familienaam': p.Familienaam,
-                           'Geslacht': p.Lengte,
-                           #'Geboortedatum': p.GeboorteDatum,
-                           'Gewicht' : p.Gewicht,
-                           'Doping' : p.Doping,
-                           'Ploeg' : p.Ploeg,
-                           'email' : p.email,
-                           'Lengte' : p.Lengte,
-                           'Avatar' : p.Avatar
+                           'Voornaam': p[0].Voornaam,
+                           'RugID': p[0].RugID,
+                           'Familienaam': p[0].Familienaam,
+                           'Geslacht': p[0].Geslacht,
+                           'Geboortedatum': p[0].Geboortedatum,
+                           'Gewicht' : p[0].Gewicht,
+                           'Doping' : p[0].Doping,
+                           'Ploeg' : p[0].Ploeg,
+                           'Lengte' : p[0].Lengte,
+                           'Events' : p[0].Events,
+                           'Awards' : p[0].Awards,
+                           
+                           
+                           #'Eventslen' : 30/len(p.events)
                                      })
         self.response.out.write(html)  
 
@@ -80,20 +70,53 @@ class addCoureur(webapp.RequestHandler):
     def get(self):
         path = os.path.join(os.path.dirname(__file__), 'form.html')
         html = template.render(path,{})
-        self.response.out.write(html)                                                   
+        self.response.out.write(html)   
+        
+        
+class addAward(webapp.RequestHandler):
+    def get(self):
+        path = os.path.join(os.path.dirname(__file__), 'awardform.html')
+        html = template.render(path,{})
+        self.response.out.write(html)     
         
 class addCoureur2DB(webapp.RequestHandler):
     def post(self):
+        eventsstr = self.request.get('events')
+        #print eventsstr
+        events = eventsstr.split(',')
+        del events[-1]
         coureur = Coureur()
         coureur.Voornaam = self.request.get('Voornaam')
         coureur.Familienaam = self.request.get('Familienaam')
         coureur.Geslacht = self.request.get('Geslacht')
+        coureur.Geboortedatum = self.request.get('Geboortedatum')
+        coureur.Gewicht = int(self.request.get('Gewicht'))
+        coureur.Doping = self.request.get('Doping')
+        coureur.Ploeg = self.request.get('Ploeg')
+        coureur.Lengte = int(self.request.get('Lengte'))
+        coureur.Events = events
+        #print coureur.Events
+        coureur.Awards = []
         coureur.RugID = int(self.request.get('RugID'))
-        avatar = self.request.get("img")
-        coureur.avatar = db.Blob(avatar)
-        
-        
         coureur.put()
+
+class addAward2DB(webapp.RequestHandler):
+    def post(self):
+        award = self.request.get('award')
+        rugid = int(self.request.get('rugid'))
+        # The Query interface prepares a query using instance methods.
+        q = Coureur.all()
+        q.filter("RugID =", rugid)
+        p = q.fetch(1)
+        p[0].Awards.append(award)
+        p[0].put()
+        path = os.path.join(os.path.dirname(__file__), 'showaward.html')
+        html = template.render(path,{
+                            'award': award,
+                            'RugID': rugid,
+        })
+        self.response.out.write(html) 
+        
         
 class showKlassement(webapp.RequestHandler):
     def get(self):
@@ -105,6 +128,7 @@ class showKlassement(webapp.RequestHandler):
                             'een': int(een),
                             'twee': (twee),
                             'drie': (drie),
+                            
         })
         self.response.out.write(html) 
         
@@ -112,14 +136,6 @@ class MainHandler(webapp.RequestHandler):
     def post(self):
         print"blah"
 
-class Image(webapp.RequestHandler):
-    def get(self):
-      coureur = db.get(self.request.get("img_id"))
-      if coureur1.avatar:
-          self.response.headers['Content-Type'] = "image/png"
-          self.response.out.write(greeting.avatar)
-      else:
-          self.error(404)
 
 
 def main():
@@ -127,8 +143,10 @@ def main():
                                         ('/showProfile', showProfile),
                                         ('/addCoureur', addCoureur),
                                         ('/addCoureur2DB',addCoureur2DB),
-                                        ('/showKlassement', showKlassement),
-                                        ('/dbimg', Image)
+                                        ('/addAward', addAward),
+                                        ('/addAward2DB',addAward2DB),
+                                        ('/showKlassement', showKlassement)
+                                        
                                         ],debug=True)
   util.run_wsgi_app(application)
 

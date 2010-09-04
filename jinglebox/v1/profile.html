@@ -1,12 +1,51 @@
-<html><head></head><body>
-<div id="Voornaam">{{Voornaam}}</div>
-<div id="Familienaam">{{Familienaam}}</div>
-<div id="Geslacht">{{Geslacht}}</div>
-<div id="Gewicht">{{Gewicht}}</div>
-<div id="Doping">{{Doping}}</div>
-<div id="Ploeg"><img src=/img/ploegen/{{Ploeg}}.jpeg></div>
-<div id="Lengte">{{Lengte}}</div>
-<div id="Avatar"><img src="img/Coureur{{RugID}}.gif"></div>
-
-</body>
 <html>
+
+<head> 
+
+<link rel="stylesheet" href="css/profile.css"/>
+<script src="/js/jquery-1.4.2.js" type="text/javascript" charset="utf-8"></script>
+
+<script src="/js/profile.js" type="text/javascript" charset="utf-8"></script>
+                                                                                      
+
+</head>
+
+
+<body>
+<div id="profilebox">
+
+<div id="namepicbox">
+<div id="Avatar"><img style="z-index:0;" width="200px" src="/img/Coureur1.png"></div>
+<div id="currentposition"></div>
+<ul>
+<li class="textbox"><div id="Voornaam" class="textbox">{{Voornaam}}</div></li>
+<li class="textbox"><div id="Familienaam" class="textbox">{{Familienaam}}</div></li>
+</ul>
+</div>
+<ul id="physics">
+<li class="physics"><div id="Geslacht"><img width="50px" src="/img/{{Geslacht}}.png"></div></li>
+<li class="physics"><div id="Lengte"><img id="lengteimg" src="/img/lengte.png"><span id="vlengte">{{Lengte}}cm</span></div></li>
+<li class="physics"><div id="Gewicht"><img width="50px" src="/img/gewicht.png">{{Gewicht}}Kg</div></li>
+</ul>
+<ul id="chosen">
+<li class="chosen" id="Dopingli" ><div id="Doping"><img style="float:left;" height="90px" src="/img/Doping.png">{{doping}}onder andere alles wat frank vandenbroucke gepakt had</div></li>
+<li class="chosen" id="Ploegli"><div id="Ploeg"><img height="90px" src="/img/weba.png"></div></li>
+</ul>
+<ul id="awards">
+{% for award in Awards %}
+    <li  style="display: inline;"><img class="awardimg" src="/img/{{award}}.png"</img></li>
+{% endfor %}
+</ul>
+
+
+<ul id="Events">
+{% for event in Events %}
+    <li class="eventimg" style="display: inline;"><img src="/img/{{event}}.png"></img></li>
+{% endfor %}
+</ul>
+
+
+
+</div>
+</body>
+</html>

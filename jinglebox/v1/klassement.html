@@ -1,8 +1,27 @@
-<html><head></head><body>
+<html><head>
 
-<iframe  id="eenframe" src="showProfile?rugid={{een}}" scrolling="auto" frameborder="no" width="33%" height = "100%"></iframe>
-<iframe  id="tweeframe" src="showProfile?rugid={{twee}}" scrolling="auto" frameborder="no" width="33%" height = "100%"></iframe>
-<iframe  id="drieframe" src="showProfile?rugid={{drie}}" scrolling="auto" frameborder="no" width="33%" height = "100%"></iframe>
+<script src="/js/jquery-1.4.2.js" type="text/javascript" charset="utf-8"></script>
+<script src="/js/showaward.js" type="text/javascript" charset="utf-8"></script>
+<link rel="stylesheet" media="all" href="css/klassement.css">
 
-</body>
+<script type="text/javascript">
+
+///jammer ik krijg de currentposition niet geselecteerd
+$(document).ready(function() {
+$("#eenframe").contents().find("#currentposition").html('<img style="z-index:10;" height="200px" src="/img/1.png">');
+});
+</script>
+</head><body>
+
+
+
+<div class="klassementprofiel" id="een"><iframe  id="eenframe" src="showProfile?rugid={{een}}" scrolling="no" width="100%" height="100%" frameborder="no"></iframe></div>
+<div class="klassementprofiel" id="twee"><iframe  id="tweeframe" src="showProfile?rugid={{twee}}" scrolling="no" width="100%" height="100%" frameborder="no"></iframe></div>
+<div class="klassementprofiel" id="drie"><iframe  id="drieframe" src="showProfile?rugid={{drie}}" scrolling="no" width="100%" height="100%" frameborder="no"></iframe></div>
+
+
+<div id=posone><img  height="150px" src="/img/eersteplaats.png"></div>
+<div id=postwo><img  height="150px" src="/img/tweedeplaats.png"></div>
+<div id=posthree><img  height="150px" src="/img/derdeplaats.png"></div>
+</body> 
 </html>
