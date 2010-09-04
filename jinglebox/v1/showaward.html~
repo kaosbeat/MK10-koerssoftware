@@ -1,0 +1,19 @@
+<html>
+<head>
+<link rel="stylesheet" media="all" href="/css/award.css">
+</head>
+<body>
+
+<form action="/addAward2DB" method="post">
+<div class="awardselector"><input type="radio" name="award" value="AwardCombine" /> <img width="150px" src="/img/AwardCombine.png"></div>
+<div class="awardselector"><input type="radio" name="award" value="AwardDecabooter" /><img width="150px" src="/img/AwardDecabooter.png"></div>
+<div class="awardselector"><input type="radio" name="award" value="AwardFreddy" /><img width="150px" src="/img/AwardFreddy.png"></div>
+<div class="awardselector"><input type="radio" name="award" value="AwardFringale" /><img width="150px" src="/img/AwardFringale.png"></div>
+<div class="awardselector"><input type="radio" name="award" value="AwardPatate" /><img width="150px" src="/img/AwardPatate.png"></div>
+<div id="rugID"><input name="RugID" rows="1" cols="21"></input>RugID</div>
+<div id="opsturen"><input type="submit" value="Submit"></div>
+</form>
+</div>
+
+</body>
+</html>

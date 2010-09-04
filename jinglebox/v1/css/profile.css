@@ -1,0 +1,203 @@
+body{
+   /*  background-color:#b0c4de;   */
+    
+}
+
+
+
+      @font-face { font-family: 'Junction'; src: url(css/Junction02.otf); }
+      @font-face { font-family: 'LeagueGothic'; src: url(css/LeagueGothic.otf);}
+      @font-face { font-family: 'NobileBold'; src: url(css/NobileBold.ttf);}
+
+#namepicbox{
+      height:380px;
+      
+      }      
+
+.textbox {
+    
+    font-family: 'Arial';
+    font-size: 50px;
+    font-weight: normal;
+    display:block;
+    letter-spacing: -.05em;
+    color: white;        
+    text-shadow: rgba(0, 0, 0, 0.5) 0 2px 5px;  
+    text-align:right;
+    z-index: 10;
+
+}
+
+
+#Familienaam{
+        text-transform: uppercase;
+        text-align: right;
+        
+    
+}
+
+#physics{
+    width:100%;
+    height:150px;
+    background-color:rgba(0, 0, 0, 0);
+}
+
+.physics{
+    position: relative;
+    background-color:rgba(0, 96, 100, 0.5);
+    float:left;
+    margin: 10px;
+    padding: 10px;
+    width: 100px;
+    text-align: center;
+    border-color:orange;
+    -moz-border-radius: 15px;
+    border-radius: 15px;
+    font-family: Arial;
+    font-size: 30px;
+    height:110px;
+    width:110px;
+}
+
+#chosen{
+      
+    width:100%;
+    height:130px;
+    float:left;
+    
+}
+
+.chosen {
+    position: relative;
+    border-color:orange;
+    background-color:rgba(29, 112, 116, 0.5);
+    -moz-border-radius: 15px;
+    border-radius: 15px;
+    font-family: Arial;
+    font-size: 30px;
+    height:90px;   
+    margin: 10px;
+    padding: 10px;
+    
+}
+#Dopingli{
+    float:left;
+    width:270px;
+    
+}
+#Doping {
+    font-size: 15px;   
+}
+
+
+#Ploegli{
+    float:left;
+    width: 90px;
+  
+   
+}
+
+#Ploeg{
+  text-align:center;
+  
+}
+#awards{
+      
+    width:100%;
+    height:120px;
+    float:left;
+    
+}
+.awards{
+    float:left;
+    position: relative;
+    border-color:orange;
+    background-color:rgba(1, 147, 154, 0.5);
+    -moz-border-radius: 15px;
+    border-radius: 15px;
+    font-family: Arial;
+    font-size: 30px;
+    height:80px;   
+    margin: 10px;
+    padding: 10px;
+}
+
+#lengte{
+   
+    
+}
+
+#Lengteimg{
+    height:110px;
+    left: 20px;
+    text-align: left;
+    position: absolute;
+}
+
+#vlengte {
+    -webkit-transform: rotate(-90deg); 
+    -moz-transform: rotate(-90deg);
+    -webkit-transform-origin: 0%,0%;
+    bottom:-100px;
+    left: 70px;
+    display: block;
+    color:black;        
+    position: relative;
+    
+}
+
+#Avatar{
+     left:0px;
+     position: absolute;
+     top: 0px;
+
+}
+
+
+
+
+#Events{
+    padding:0px;
+    width: 100%;
+    height:100px;
+    list-style-type: none;
+    position: absolute; 
+    bottom:0px;
+    margin: 0px;
+}
+
+.awardimg {
+    width:140px;
+    position: relative;
+    top:5%;
+    background-color:rgba(93, 200, 205, 0.5);
+    -moz-border-radius: 15px;
+    border-radius: 15px;
+    font-family: Arial;
+    font-size: 30px;
+    height:70px;   
+    margin: 10px;
+    padding: 10px;
+
+
+.eventimg {
+    width:40px;
+    position: relative;
+    top:5%;
+    background-color:rgba(93, 200, 205, 0.5);
+    -moz-border-radius: 15px;
+    border-radius: 15px;
+    font-family: Arial;
+    font-size: 30px;
+    height:80px;   
+    margin: 10px;
+    padding: 10px;
+}
+body {
+    border-color: red;
+    border-style:solid;
+    border-width:0px;
+    padding: 0px;
+    margin: 0px;
+     
+}

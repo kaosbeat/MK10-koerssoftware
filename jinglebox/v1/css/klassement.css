@@ -1,0 +1,68 @@
+body{
+     background-color:#b0c4de;   
+     padding: 0px;
+     overflow: hidden;
+     margin-bottom: 0px;
+        margin-left: 0px;
+        margin-right: -16px;
+        margin-top: 0px;
+}
+
+.klassementprofiel{
+    width:33%;
+    background-repeat:no-repeat;
+    background-position: center center; 
+    height:100%;
+    float:left;
+    border: 0px;
+}
+
+
+#een {
+    background-color:#a9a9a9;
+    background-image:url('/img/fietsbabe1.png');
+    
+
+}
+
+#twee {
+    background-color:#c0c0c0;
+    background-image:url('/img/fietsbabe2.png');
+
+}
+
+#drie {
+    background-color:#d3d3d3;
+    background-image:url('/img/fietsbabe3.png');
+
+}
+
+
+#posone {
+ z-index: 1000;
+ position: absolute;
+
+ top:200px;
+ left: 75px;
+    
+}
+
+#postwo {
+ z-index: 1000;
+ position: absolute;
+
+ top:100px;
+ left: 475px;
+    
+}
+
+
+
+#posthree {
+ z-index: 1000;
+ position: absolute;
+
+ top:20px;
+ left: 875px;
+    
+}
